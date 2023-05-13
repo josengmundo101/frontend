@@ -1,0 +1,36 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "frontend application using electron with integration of OpenAI and Supabase",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josengmundo101/frontend.git"
+  },
+  "author": "Joseph Quinte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josengmundo101/frontend/issues"
+  },
+  "homepage": "https://github.com/josengmundo101/frontend#readme",
+  "keywords": [
+    "Frontend",
+    "Application",
+    "using",
+    "Electron",
+    "with",
+    "integration",
+    "of",
+    "OpenAI",
+    "API",
+    "and",
+    "supabase"
+  ],
+  "devDependencies": {
+    "electron": "^24.3.0"
+  }
+}
