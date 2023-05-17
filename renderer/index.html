@@ -10,26 +10,78 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title>Marv Sarcastic Chat Bot</title>
+    <title>Marv - The Sarcastic Chat Bot</title>
+    <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/css/style.css" rel="stylesheet">
   </head>
-  <body>
-    <h1>Marv</h1>
-    <div>
+  <body class ="bg-secondary">
 
-      <form id="form_sentence">
-        <label for="sentence">Sentence:</label><br>
-        <textarea name="Sentence" rows="4"></textarea><br>
-        <input type="submit" value="Submit"><br>
-      </form>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./images/img_logo.png" alt="" width="50" height="25" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Description</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">New</a></li>
+                <li><a class="dropdown-item" href="#">Last Topic</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Container -->
+    
+    <div class="container theme-bg-primary p-5 mt-3 text-center">
+      <h1 class="text-4xl font-semibold text-center mt-6 sm:mt-[20vh] ml-auto mr-auto mb-10 sm:mb-16 flex gap-2 items-center justify-center">Marv The Sarcastic Chat Bot</h1>
+
+        <div class="md:flex items-start text-center gap-3.5">
+          <div class="flex flex-col mb-8 md:mb-auto gap-3.5 flex-1">
+            <h2 class="flex gap-3 items-center m-auto text-lg font-normal md:flex-col md:gap-2">
+              <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36">                  
+                </line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>Examples</h2><br>
+
+              <ul class="flex flex-col gap-3.5 w-full sm:max-w-md m-auto"><button class="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md hover:bg-gray-200 dark:hover:bg-gray-900">"How many pounds are in a kilogram?" →</button>
+                <button class="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md hover:bg-gray-200 dark:hover:bg-gray-900">"What does HTML stand for?" →</button>
+                <button class="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md hover:bg-gray-200 dark:hover:bg-gray-900">"When did the first airplane fly?" →</button>
+              </ul>
+            </div>
+        </div>
+          
+      <form class="mb-3"id="bot_message"> 
+        <br><label class ="form-label mb-3" for="message">Hi there! How can I sarcastically assist you today?</label>
+
+          <textarea class ="form-control mb-3" name="message" rows="4"></textarea>
+          <input type="submit" class="btn btn-primary mb-3" value="Submit">
+        </form>
+    
+          <label class ="form-label" for="message_response">Response</label>
+          <textarea class ="form-control" id="message_response" rows="4" readonly></textarea>
+        </div>
     </div>
-    <br>
-    <div>
-
-      <label for="sentence_corrected">Corrected Sentence</label><br>
-      <textarea id="sentence_corrected" rows="4" readonly></textarea>
-    </div>
-
-
+    <script src="./js/bootstrap/bootstrap.bundle.min.js"></script> 
   </body>
   <script src="./js/renderer.js"></script>
 </html>
