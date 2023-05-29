@@ -14,73 +14,86 @@
     <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="./css/css/style.css" rel="stylesheet">
   </head>
-  <body class ="bg-secondary">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="./images/img_logo.png" alt="" width="50" height="25" class="d-inline-block align-text-top">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Description</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">New</a></li>
-                <li><a class="dropdown-item" href="#">Last Topic</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <body>
     
-    <!-- Container -->
-    
-    <div class="container theme-bg-primary p-5 mt-3 text-center">
-      <h1 class="text-4xl font-semibold text-center mt-6 sm:mt-[20vh] ml-auto mr-auto mb-10 sm:mb-16 flex gap-2 items-center justify-center">Marv The Sarcastic Chat Bot</h1>
+    <div class="theme-bg-primary">
+        <div class="container z-depth-1 my-5 p-5">
 
-        <div class="md:flex items-start text-center gap-3.5">
-          <div class="flex flex-col mb-8 md:mb-auto gap-3.5 flex-1">
-            <h2 class="flex gap-3 items-center m-auto text-lg font-normal md:flex-col md:gap-2">
-              <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36">                  
-                </line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>Examples</h2><br>
-
-              <ul class="flex flex-col gap-3.5 w-full sm:max-w-md m-auto"><button class="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md hover:bg-gray-200 dark:hover:bg-gray-900">"How many pounds are in a kilogram?" →</button>
-                <button class="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md hover:bg-gray-200 dark:hover:bg-gray-900">"What does HTML stand for?" →</button>
-                <button class="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md hover:bg-gray-200 dark:hover:bg-gray-900">"When did the first airplane fly?" →</button>
-              </ul>
-            </div>
-        </div>
+        <!-- Section -->
+        <section id="intro-area">
           
-      <form class="mb-3"id="bot_message"> 
-        <br><label class ="form-label mb-3" for="message">Hi there! How can I sarcastically assist you today?</label>
+          <h3 class="font-weight-bold text-center dark-grey-text pb-2">Marv <br> Sarcastic Chatbot</h3>
+          <hr class="w-header my-4">
+          <p class="lead text-center text-muted pt-2 pb-3 mb-5">Gi kapoy naka kang Chatgpt? Diri nasab ka brad oh</p>
+      
+          <div class="row dark-grey-text">
+      
+            <div class="col-md-6 col-xl-4 mb-4">
+              <div class="media">
+                <div class="mr-4">
+                  <span class="text-primary"><i class="icon-fa fas fa-file-alt fa-2x"></i></span>
+                </div>
+                <div class="media-body">
+                  <h6 class="font-weight-bold">Step One</h6>
+                  <p class="text-muted">Chatbot that has humor like you.</p>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-6 col-xl-4 mb-4">
+              <div class="media">
+                <div class="mr-4">
+                  <span class="text-danger"><i class="icon-fa fas fa-bullhorn fa-2x"></i></span>
+                </div>
+                <div class="media-body">
+                  <h6 class="font-weight-bold">Step Two</h6>
+                  <p class="text-muted">Can give you information about anything just like his brother Chatgpt.</p>
+                </div>
+              </div>
+            </div>
+            <button id="btn_continue" class="btn btn-light my-3 w-100 fw-bold align-self-center">Click Here to Continue</button>
+      
+          </div>
+      
+        </section>
+          <!-- Section -->
+      </div>     
+  <!-- Intro-Area-End -->
 
-          <textarea class ="form-control mb-3" name="message" rows="4"></textarea>
-          <input type="submit" class="btn btn-primary mb-3" value="Submit">
-        </form>
+
+    <div class="bg-secondary">
+      <!-- Chat-Area -->
+      <section id="chat-area" class="d-none">
+        <div class="container py-5 theme-bg-primary">
+
+              <div class="col-md-6 col-sm-10 text-center">
+                <h1 class="display-4 font-weight-normal">Marv The Sarcastic Chat Bot</h1>
+                <img src="./images/robotlogo2.jpg" class="w-75 mt-5">
+              </div>
     
-          <label class ="form-label" for="message_response">Response</label>
-          <textarea class ="form-control" id="message_response" rows="4" readonly></textarea>
+              <div class="col-md-4 col-sm-8 offset-1 bg-white p-3" id="outer">
+                <div class="main"></div>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Ask me anything" id="inp_text" style="height: 50px;"/>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary btn-lg" id="send"><i>send</i></button>
+                  </div>
+      
+                </div>
+              </div>
+                
+           
+          </div>
+              <!-- Div-Chat-End -->
+            </div>
+          </div>
+      
         </div>
+      </section>
     </div>
+    <!-- Chat-Area-End -->
+
+
     <script src="./js/bootstrap/bootstrap.bundle.min.js"></script> 
   </body>
   <script src="./js/renderer.js"></script>

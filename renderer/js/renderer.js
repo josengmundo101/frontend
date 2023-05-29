@@ -1,22 +1,20 @@
-const form = document.getElementById("bot_message");
-if (form) {
-  form.onsubmit = async function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-
-    let message = formData.get("message");
-    if (message.length <= 5) {
-      alertMessages("error", "Please input atleast five characters!");
-      return;
-    }
-
-    //console.log(formData.get("message"));
-    const response = await window.axios.openAI(formData.get("message"));
-    document.getElementById("message_response").innerHTML = JSON.stringify(
-      response.choices[0].text
-    ).replace(/\\n/g, "");
-  };
+// Btn Continue
+const btn_continue = document.getElementById("btn_continue");
+if (btn_continue) {
+  btn_continue.onclick = function (e) {
+    // Hide Intro Area and Show ChatBox
+    const intro_area = document.getElementById("intro-area");
+    const chat_area = document.getElementById("chat-area");
+    intro_area.classList.add('d-none');
+    chat_area.classList.remove('d-none');
+    chat_area.classList.add('d-flex');
+    // Show Latest Chat
+    const div_conversation = document.getElementById('div-conversation');
+    div_conversation.scrollTo(0, div_conversation.scrollHeight);
+    // Focus Input Type Message
+    const txt_message = document.getElementById('txt_message');
+    txt_message.focus();
+  }
 }
 
 function alertMessages(status, message) {
