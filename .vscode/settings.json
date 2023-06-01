@@ -1,5 +1,7 @@
 {
-    "editor.formatOnSave": false
-    "vscode-pets.theme": "castle"
-    "vscode-pets.petType": "crab"
+    "editor.formatOnSave": false,
+    "vscode-pets.theme": "castle",
+    "vscode-pets.petType": "crab",
+    "vscode-pets.throwBallWithMouse": true,
+    "vscode-pets.spawn-pet"
 }

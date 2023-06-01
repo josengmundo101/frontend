@@ -1,9 +1,111 @@
-.theme-bg-primary{
-    background-color: #f2f2f2;
+body{
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(#222f47, #395575);
+  color: #a3a6ad;
 }
 
-.bg-secondary{
-    background-color: #3b90f1 !important;
 
+
+
+/* Button styles */
+#btn_continue {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #a3a6ad;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+#btn_continue:hover {
+  box-shadow: 0 0 5px #1e2d77 0 15px #1e2d77, 0 0 30px #1e2d77, 0 0 60px #1e2d77, 0 0 120px #1e2d77;
+  transform: scale(1.05);
+}
+
+#btn_continue:hover::after {
+  content: ""; /* Create a pseudo-element */
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #1e2d77, 0 0 15px #1e2d77, 0 0 30px #1e2d77, 0 0 60px #1e2d77, 0 0 120px #1e2d77;
+  animation: btn-glow-reverse 2s ease-in-out infinite alternate;
+}
+
+@keyframes btn-glow-reverse {
+  0% {
+    box-shadow: 0 0 5px #1e2d77, 0 0 15px #1e2d77, 0 0 30px #1e2d77, 0 0 60px #1e2d77, 0 0 120px #1e2d77;
+  }
+  100% {
+    box-shadow: 0 0 5px #1e2d77, 0 0 15px #1e2d77, 0 0 30px #1e2d77, 0 0 60px #1e2d77;
+  }
+}
+
+/* Scroll to chat-area when button is clicked */
+#btn_continue {
+  cursor: pointer;
+}
+
+#btn_continue:focus {
+  outline: none;
+}
+
+.theme-bg-tertiary{
+  background-color: #146C94 !important;
+}
+
+.theme-bg-text{
+  color: #146C94 !important;
+}
+
+.form-textarea{
+  height: 125px !important;
+}
+
+/* Chat-Area */
+
+#chat-area .card-body {
+  position: relative;
+  height: 500px;
+  overflow: scroll;
+}
+
+#chat-area img.img-you,
+#chat-area img.img-junjun {
+  width: 40px; 
+  height: 100%;
+}
+
+/* Chat-Div */
+
+.div-chat .form-control {
+  border-color: transparent;
+}
+
+.div-chat .form-control:focus {
+  border-color: transparent;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.div-chat .divider:after,
+.div-chat .divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+#chat-area {
+  display: none;
+}
