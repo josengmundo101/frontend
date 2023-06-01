@@ -1,11 +1,19 @@
 body{
   padding: 0;
   font-family: sans-serif;
-  background: linear-gradient(#222f47, #395575);
   color: #a3a6ad;
 }
 
-
+.back-video{
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  min-width: 90%;
+  min-height: 10%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
 
 
 /* Button styles */
@@ -77,15 +85,12 @@ body{
 
 #chat-area .card-body {
   position: relative;
-  height: 500px;
+  border-color: transparent;
+  height: 400px;
+  width: 100%;
   overflow: scroll;
 }
 
-#chat-area img.img-you,
-#chat-area img.img-junjun {
-  width: 40px; 
-  height: 100%;
-}
 
 /* Chat-Div */
 
