@@ -83,12 +83,78 @@ body{
 
 /* Chat-Area */
 
-#chat-area .card-body {
+.card-body {
   position: relative;
   border-color: transparent;
   height: 400px;
   width: 100%;
   overflow: scroll;
+}
+/* CSS */
+.chat-area {
+  height: 400px;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.message p {
+  padding: 8px 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 80%;
+  word-wrap: break-word;
+  align-self: flex-end;
+}
+
+.message-user p {
+  background-color: #ffffff;
+  align-self: flex-end;
+}
+
+.message-ai p {
+  background-color: #d1d1d1;
+  align-self: flex-start;
+}
+
+.img-message {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  align-self: flex-end;
+}
+
+.img-message.message-user {
+  margin-right: 0;
+  margin-left: 10px;
+  align-self: flex-end;
+}
+
+.img-message.message-ai {
+  margin-right: 20px;
+  margin-left: 0;
+  align-self: flex-start;
 }
 
 
