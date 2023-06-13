@@ -56,11 +56,14 @@ if (btn_submit) {
     // Store chatbot's response in the conversation array
     conversation.push({ content: response, sender: 'chatbot' });
 
+    // Store conversation in Supabase
+    await storeConversation(conversation);
+
     // Reload Chatbox
     setChatbox();
 
     // Enable Submit Button
-    btn_submit.innerHTML = '<img src="./images/ic_plane.png" width="30" height="30" alt="">';
+    btn_submit.innerHTML = '<img src="./images/paperplane.png" width="30" height="30" alt="">';
     btn_submit.disabled = false;
   };
 }
@@ -91,6 +94,17 @@ function setChatbox() {
   chatArea.scrollTop = chatArea.scrollHeight;
 }
 }
+
+// Store conversation in Supabase
+async function storeConversation(conversation) {
+  const { data, error } = await supabase.from('chatbox_conversations').insert([{ conversation }]);
+  if (error) {
+    console.error('Error storing conversation in Supabase:', error);
+  } else {
+    console.log('Conversation stored in Supabase:', data);
+  }
+}
+
 // Alert Message
 function alertMessage(status, sentence) {
   window.Toastify.showToast({
