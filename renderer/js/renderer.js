@@ -1,3 +1,13 @@
+// Initialize Conversation Array
+let conversation = [];
+
+// Load Conversation from Local Storage
+const storedConversation = localStorage.getItem('conversation');
+if (storedConversation) {
+  conversation = JSON.parse(storedConversation);
+  setChatbox();
+}
+
 // Btn Continue
 const btn_continue = document.getElementById("btn_continue");
 if (btn_continue) {
@@ -17,14 +27,8 @@ if (btn_continue) {
   }
 }
 
-// Initialize Conversation Array
-let conversation = [];
-
 // Btn Submit
 const btn_submit = document.getElementById("btn_submit");
-if (btn_submit) {
-  // Btn Submit
-const btn_submit = document.getElementById('btn_submit');
 if (btn_submit) {
   btn_submit.onclick = async function (e) {
     // Get Text from Message
@@ -56,9 +60,15 @@ if (btn_submit) {
     // Store chatbot's response in the conversation array
     conversation.push({ content: response, sender: 'chatbot' });
 
-    // Store conversation in Supabase
-    await storeConversation(conversation);
+    // Store the conversation in local storage
+    localStorage.setItem('conversation', JSON.stringify(conversation));
 
+    // Store the conversation in the database
+    const storeResponse = await window.axios.supaBase('post', 'prompts', {
+      user_message: userMessage,
+      bot_response: response
+    });
+    
     // Reload Chatbox
     setChatbox();
 
@@ -67,9 +77,6 @@ if (btn_submit) {
     btn_submit.disabled = false;
   };
 }
-
-// Load Chatbox
-setChatbox();
 
 // Set the conversation in the chat area
 function setChatbox() {
@@ -82,10 +89,13 @@ function setChatbox() {
   // Loop through the conversation array and append messages to the chat area
   conversation.forEach(message => {
     const { content, sender } = message;
-    const messageType = sender === 'user' ? 'message-user' : 'message-ai';
-    const messageElement = `<div class="message ${messageType}">
+    const messageType = sender === 'user' ? 'user' : 'chatbot';
+    const messageElement = `<div class="d-flex flex-row justify-content-${sender === 'user' ? 'end' : 'start'} mb-4 pt-1">
                               <img class="img-${messageType}" src="./images/img_${messageType}.png" alt="">
-                              <p>${content}</p>
+                              <div>
+                                <p class="small p-2 ms-3 mb-1 rounded-3 theme-bg-surface">${content}</p>
+                                <p class="small ms-3 mb-3 rounded-3 text-muted">${getCurrentTime()}</p>
+                              </div>
                             </div>`;
     chatArea.innerHTML += messageElement;
   });
@@ -93,22 +103,22 @@ function setChatbox() {
   // Scroll to the bottom of the chat area
   chatArea.scrollTop = chatArea.scrollHeight;
 }
-}
 
-// Store conversation in Supabase
-async function storeConversation(conversation) {
-  const { data, error } = await supabase.from('chatbox_conversations').insert([{ conversation }]);
-  if (error) {
-    console.error('Error storing conversation in Supabase:', error);
-  } else {
-    console.log('Conversation stored in Supabase:', data);
-  }
+// Get current time in HH:mm AM/PM format
+function getCurrentTime() {
+  const currentDate = new Date();
+  const hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+  const formattedMinutes = minutes.toString().padStart(2, '0');
+  return `${formattedHours}:${formattedMinutes} ${ampm}`;
 }
 
 // Alert Message
-function alertMessage(status, sentence) {
+function alertMessage(status, message) {
   window.Toastify.showToast({
-    text: sentence,
+    text: message,
     duration: 3000,
     stopOnFocus: true,
   });

@@ -26,7 +26,7 @@ body{
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
-  background-color: #a3a6ad;
+  background-color: #c3c4c7;
   border: none;
   border-radius: 5px;
   outline: none;
@@ -86,7 +86,7 @@ body{
 .card-body {
   position: relative;
   border-color: transparent;
-  height: 450px;
+  height: 445px;
   width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -95,12 +95,11 @@ body{
 /* CSS */
 
 .div-chat {
-  background-color: transparent;
+  background-color: #1f1f1f;
 }
 
-#div_chat .card-header {
-  background-color: gray;
-  color: #464646;
+.card-header {
+  background-color:#141414;
   display: block;
 }
 
@@ -142,12 +141,12 @@ body{
 }
 
 .message-user p {
-  background-color: #636363;
+  background-color: #5c5c5c;
   align-self: flex-end;
 }
 
 .message-ai p {
-  background-color: #181818;
+  background-color: #2e2e2e;
   align-self: flex-start;
   margin-right: auto; /* Optional: Adjust margin for spacing */
 }
